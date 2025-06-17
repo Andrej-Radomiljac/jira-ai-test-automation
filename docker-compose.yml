@@ -1,0 +1,11 @@
+version: '3.8'
+services:
+  jira-claude-playwright:
+    build: .
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+    volumes:
+      - ./generated-tests:/app/generated-tests
+    restart: unless-stopped
